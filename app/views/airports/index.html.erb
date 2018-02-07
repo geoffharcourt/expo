@@ -1,0 +1,31 @@
+<h1>Airports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Code</th>
+      <th>Opened On</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airports.each do |airport| %>
+      <tr>
+        <td data-role="airport-name"><%= airport.name %>
+        <td><%= airport.city %>
+        <td><%= airport.code %>
+        <td data-role="opened-on-date"><%= airport.opened_on.strftime("%B %e, %Y") %>
+        <td><%= link_to "Show", airport %></td>
+        <td><%= link_to "Edit", edit_airport_path(airport) %></td>
+        <td><%= link_to "Destroy", airport, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New Airport", new_airport_path %>

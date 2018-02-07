@@ -67,9 +67,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
-    capybara-webkit (1.1.0)
-      capybara (~> 2.0, >= 2.0.2)
-      json
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
@@ -274,7 +271,6 @@ DEPENDENCIES
   bourbon (~> 5.0)
   bullet
   bundler-audit (>= 0.5.0)
-  capybara-webkit
   delayed_job_active_record
   dotenv-rails
   factory_bot_rails
@@ -316,4 +312,4 @@ RUBY VERSION
    ruby 2.5.0p0
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
