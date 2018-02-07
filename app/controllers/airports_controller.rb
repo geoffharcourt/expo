@@ -24,7 +24,7 @@ class AirportsController < ApplicationController
     @airport = Airport.new(airport_params)
 
     if @airport.save
-      redirect_to airports_path, notice: 'Airport was successfully created.'
+      redirect_to airports_path, notice: I18n.t("airports.create.success")
     else
       render :new
     end

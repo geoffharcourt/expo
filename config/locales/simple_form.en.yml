@@ -11,7 +11,12 @@ en:
     error_notification:
       default_message: "Please review the problems below:"
     # Examples
-    # labels:
+    labels:
+      airport:
+        name: "Name"
+        city: "City"
+        code: "Code"
+        opened_on: "Opened On"
     #   defaults:
     #     password: 'Password'
     #   user:

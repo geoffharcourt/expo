@@ -1,12 +1,12 @@
-<h1>Airports</h1>
+<h1><%= t(".title") %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>City</th>
-      <th>Code</th>
-      <th>Opened On</th>
+      <th><%= t("simple_form.labels.airport.name") %></th>
+      <th><%= t("simple_form.labels.airport.city") %></th>
+      <th><%= t("simple_form.labels.airport.code") %></th>
+      <th><%= t("simple_form.labels.airport.opened_on") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
         <td data-role="airport-name"><%= airport.name %>
         <td><%= airport.city %>
         <td><%= airport.code %>
-        <td data-role="opened-on-date"><%= airport.opened_on.strftime("%B %e, %Y") %>
+        <td data-role="opened-on-date"><%= l(airport.opened_on, format: :custom) %>
         <td><%= link_to "Show", airport %></td>
         <td><%= link_to "Edit", edit_airport_path(airport) %></td>
         <td><%= link_to "Destroy", airport, method: :delete, data: { confirm: "Are you sure?" } %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to "New Airport", new_airport_path %>
+<%= link_to t(".add_airport"), new_airport_path %>

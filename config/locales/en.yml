@@ -1,6 +1,8 @@
 en:
   date:
     formats:
+      custom:
+        "%b %-d, %Y"
       default:
         "%m/%d/%Y"
       with_weekday:
@@ -11,9 +13,23 @@ en:
       default:
         "%a, %b %-d, %Y at %r"
       date:
-        "%b %-d, %Y"
+        "%b %e, %Y"
       short:
         "%B %d"
 
   titles:
     application: Expo
+
+  helpers:
+    submit:
+      airport:
+        create: Create Airport
+
+  airports:
+    create:
+      success: New airport created!
+    index:
+      add_airport: Add An Airport
+      title: Airports
+    new:
+      title: New Airport

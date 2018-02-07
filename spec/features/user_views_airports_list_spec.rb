@@ -4,7 +4,7 @@ RSpec.feature "User views airports" do
   scenario "shows the correct title" do
     visit airports_path
 
-    expect(page).to have_css("h1", text: "Airports")
+    expect(page).to have_css("h1", text: t("airports.index.title"))
   end
 
   scenario "sees all airports sorted by opening date" do
@@ -22,27 +22,25 @@ RSpec.feature "User views airports" do
 
     visit airports_path
 
-    expect(find("[data-role='opened-on-date']").text).to eq("January 1, 2000")
+    expect(find("[data-role='opened-on-date']").text).
+      to eq(l(opened_on, format: :custom))
   end
 
   scenario "and creates a new airport" do
     visit airports_path
 
-    click_on "New Airport"
+    click_on t("airports.index.add_airport")
 
-    expect(page).to have_css("h1", text: "New Airport")
+    expect(page).to have_css("h1", text: t("airports.new.title"))
 
     new_airport_name = "My New Airport"
-    fill_in "Name", with: new_airport_name
-    fill_in "City", with: "Wheresville"
-    fill_in "Code", with: "WHR"
-    fill_in "Opened on", with: "2000-01-01"
-    click_on "Create Airport"
+    fill_in t("simple_form.labels.airport.name"), with: new_airport_name
+    fill_in t("simple_form.labels.airport.city"), with: "Wheresville"
+    fill_in t("simple_form.labels.airport.code"), with: "WHR"
+    fill_in t("simple_form.labels.airport.opened_on"), with: "2000-01-01"
+    click_on t("helpers.submit.airport.create")
 
-    expect(page).to have_css(
-      ".flashes",
-      text: "Airport was successfully created.",
-    )
+    expect(page).to have_css(".flashes", text: t("airports.create.success"))
     expect(airport_names).to eq([new_airport_name])
   end
 
