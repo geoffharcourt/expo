@@ -1,0 +1,35 @@
+es:
+  date:
+    formats:
+      custom:
+        "%b %-d, %Y"
+      default:
+        "%m/%d/%Y"
+      with_weekday:
+        "%a %m/%d/%y"
+
+  time:
+    formats:
+      default:
+        "%a, %b %-d, %Y at %r"
+      date:
+        "%b %e, %Y"
+      short:
+        "%B %d"
+
+  titles:
+    application: Expo
+
+  helpers:
+    submit:
+      airport:
+        create: Nuevo Aeropuerto
+
+  airports:
+    create:
+      success: ¡Nuevo aeropuerto creado!
+    index:
+      add_airport: Creatar un Aeropuerto
+      title: Los Aeropuertos
+    new:
+      title: Nuevo Aeropuerto
