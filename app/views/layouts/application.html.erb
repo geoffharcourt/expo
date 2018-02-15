@@ -16,6 +16,9 @@
 <body class="<%= body_class %>">
   <%= render "flashes" -%>
   <%= yield %>
+  <br/>
+  <br/>
+  <p>Current locale: <%= I18n.locale %>
   <%= render "javascript" %>
   <%= render "css_overrides" %>
 </body>
